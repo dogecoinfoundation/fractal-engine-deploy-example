@@ -11,15 +11,17 @@ const env = {
   region: process.env.CDK_DEFAULT_REGION,
 };
 
+const environment_overrides = {
+  CHAIN: "testnet",
+};
+
 const network = new NetworkStack(app, "NetworkStack", { env });
 
 const doge = new DogecoinStack(app, "DogecoinStack", {
   vpc: network.vpc,
   dogeSecurityGroup: network.dogeSg,
   namespace: network.namespace,
-  environment: {
-    CHAIN: "testnet", // Change to mainnet for production
-  },
+  environment: environment_overrides,
   env,
 });
 

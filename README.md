@@ -4,6 +4,16 @@ This is an example how to deploy the Fractal Engine using CDK.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
+## Environment Variable Overrides
+In bin/deploy.ts can are able to override environment variables.
+CHAIN can be testnet or mainnet.
+
+```ts
+const environment_overrides = {
+  CHAIN: "testnet",
+};
+```
+
 ## Useful commands
 
 * `npm run build`   compile typescript to js
