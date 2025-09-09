@@ -17,6 +17,9 @@ const doge = new DogecoinStack(app, "DogecoinStack", {
   vpc: network.vpc,
   dogeSecurityGroup: network.dogeSg,
   namespace: network.namespace,
+  environment: {
+    CHAIN: "testnet", // Change to mainnet for production
+  },
   env,
 });
 
